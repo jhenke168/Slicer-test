@@ -4,4 +4,3 @@ y = 2
 print('this')
 print(x+y)
 z = 7+4
-print(z)
