@@ -22,20 +22,25 @@ for i in range(18589,55744):
     for j in range(len(row)):
         row[j] = row[j].strip(',')
         row[j] = float(row[j])
-    mc_mesh_array.append(row)
+    mc_mesh_coords.append(row)
 
-mc_mesh_array = []
+mc_mesh_points = []
 for i in range(6,18585): 
     row = mc_mesh[i].split(',')
     row = row[0].split()
     for j in range(len(row)):
         row[j] = float(row[j])
-    mc_mesh_coords.append(row)
+    mc_mesh_points.append(row)
 
-mc_mesh_array = np.array(mc_mesh_array)
-x = mc_mesh_array[:,0]
-y = mc_mesh_array[:,1]
-z = mc_mesh_array[:,2]
+mc_mesh_points = np.array(mc_mesh_points)
+x = mc_mesh_points[:,0]
+y = mc_mesh_points[:,1]
+z = mc_mesh_points[:,2]
+mc_mesh_coords = np.array(mc_mesh_coords)
+i = mc_mesh_coords[:,0]
+j = mc_mesh_coords[:,1]
+k = mc_mesh_coords[:,2]
+#i'm pretty sure the coordinate index corresponds with i,j,k in plotly but there are obviously issues
 
-fig = go.Figure(data=[go.Mesh3d(x=x, y=y, z=z, color='lightpink', opacity=0.50)])
+fig = go.Figure(data=[go.Mesh3d(x=x, y=y, z=z, color='lightpink', opacity=0.50)]) #, i=i, j=j, k=k
 fig.show()
