@@ -34,13 +34,18 @@ for i in range(6,18585):
 
 mc_mesh_points = np.array(mc_mesh_points)
 x = mc_mesh_points[:,0]
+#x_t = np.transpose[x]
 y = mc_mesh_points[:,1]
+#y_t = np.transpose[y]
 z = mc_mesh_points[:,2]
 mc_mesh_coords = np.array(mc_mesh_coords)
 i = mc_mesh_coords[:,0]
+i_t = np.transpose(i)
 j = mc_mesh_coords[:,1]
+j_t = np.transpose(j)
 k = mc_mesh_coords[:,2]
+k_t = np.transpose(k)
 #i'm pretty sure the coordinate index corresponds with i,j,k in plotly but there are obviously issues
 
-fig = go.Figure(data=[go.Mesh3d(x=x, y=y, z=z, color='lightpink', opacity=0.50)]) #, i=i, j=j, k=k
+fig = go.Figure(data=[go.Mesh3d(x=x, y=y, z=z, color='lightpink', opacity=0.50,  i=i_t, j=j_t, k=k_t)]) #, i=i, j=j, k=k
 fig.show()
