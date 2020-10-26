@@ -2,6 +2,9 @@
 #need to install plotly==4.11.0
 import plotly.graph_objects as go
 import numpy as np
+import matplotlib
+from mpl_toolkits.mplot3d import Axes3D  # noqa: F401 unused import
+import matplotlib.pyplot as plt
 
 mc_file = open('mc115L.iv', 'r')
 mc_mesh = mc_file.read().splitlines()
@@ -47,5 +50,15 @@ k = mc_mesh_coords[:,2]
 k_t = np.transpose(k)
 #i'm pretty sure the coordinate index corresponds with i,j,k in plotly but there are obviously issues
 
-fig = go.Figure(data=[go.Mesh3d(x=x, y=y, z=z, color='lightpink', opacity=0.50,  i=i_t, j=j_t, k=k_t)]) #, i=i, j=j, k=k
-fig.show()
+#fig = go.Figure(data=[go.Mesh3d(x=x, y=y, z=z, color='lightpink', opacity=0.50,  i=i_t, j=j_t, k=k_t)]) #, i=i, j=j, k=k
+#fig.show()
+
+triangles = mc_mesh_coords[:, 0:3]
+print(triangles)
+matplotlib.tri.Triangulation(x, y, triangles=triangles, mask=None)
+
+fig = plt.figure()
+ax = fig.gca(projection='3d')
+
+ax.plot_trisurf(triangulation, x, y, z, linewidth=0.2, antialiased=True)
+plt.show()
