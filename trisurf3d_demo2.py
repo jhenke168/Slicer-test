@@ -1,14 +1,14 @@
-'''
-===========================
-More triangular 3D surfaces
-===========================
+#'''
+#===========================
+#More triangular 3D surfaces
+#===========================
 
-Two additional examples of plotting surfaces with triangular mesh.
+#Two additional examples of plotting surfaces with triangular mesh.
 
-The first demonstrates use of plot_trisurf's triangles argument, and the
-second sets a Triangulation object's mask and passes the object directly
-to plot_trisurf.
-'''
+#The first demonstrates use of plot_trisurf's triangles argument, and the
+#second sets a Triangulation object's mask and passes the object directly
+#to plot_trisurf.
+#'''
 
 import numpy as np
 import matplotlib.pyplot as plt

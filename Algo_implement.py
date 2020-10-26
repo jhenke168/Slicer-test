@@ -54,10 +54,9 @@ k_t = np.transpose(k)
 #fig.show()
 
 triangles = mc_mesh_coords[:, 0:3]
-Triangulation = matplotlib.tri.Triangulation(x, y, mask=None)
+triang = matplotlib.tri.Triangulation(x,y, triangles)
 
 fig = plt.figure()
 ax = fig.gca(projection='3d')
-
-ax.plot_trisurf(Triangulation, x, y, z, linewidth=0.2, antialiased=True)
+ax.plot_trisurf(triang, x, y, z, linewidth=0.2, antialiased=True)
 plt.show()
