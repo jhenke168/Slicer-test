@@ -49,13 +49,13 @@ k = mc_mesh_coords[:,2]
 #k_t = np.transpose(k)
 #i'm pretty sure the coordinate index corresponds with i,j,k in plotly but there are obviously issues
 
-#fig = go.Figure(data=[go.Mesh3d(x=x, y=y, z=z, color='lightpink', opacity=0.50,  i=i, j=j, k=k)]) #, i=i, j=j, k=k
-#fig.show()
+fig = go.Figure(go.Mesh3d(x=x, y=y, z=z, color='lightpink', opacity=0.50,  i=i, j=j, k=k)) #go.Figure(data=[go.Mesh3d(x=x, y=y, z=z, color='lightpink', opacity=0.50,  i=i, j=j, k=k)]) #, i=i, j=j, k=k
+fig.show()
 
-triangles = mc_mesh_coords[:, 0:3]
-triang = matplotlib.tri.Triangulation(x,y, triangles=triangles)
+#triangles = mc_mesh_coords[:, 0:3]
+#triang = matplotlib.tri.Triangulation(x,y, triangles=triangles)
 
-fig = plt.figure()
-ax = fig.gca(projection='3d')
-ax.plot_trisurf(triang, x, y, z, linewidth=0.2)
-plt.show()
+#fig = plt.figure()
+#ax = fig.gca(projection='3d')
+#ax.plot_trisurf(triang, x, y, z, linewidth=0.2)
+#plt.show()
